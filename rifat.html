@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AM RiFaT | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    nav {
+      width: 100%;
+      background: #111;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 25px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: red;
+    }
+    .intro {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px;
+      gap: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .intro img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 15px red;
+    }
+    .intro-text h2 {
+      color: red;
+      font-size: 1.2rem;
+    }
+    .intro-text h1 {
+      font-size: 2.5rem;
+    }
+    .intro-text p {
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+    .hidden {
+      display: none;
+    }
+    .section {
+      padding: 40px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .section h2 {
+      color: red;
+      margin-bottom: 10px;
+    }
+    .section p {
+      line-height: 1.6;
+    }
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px 0;
+    }
+    .social a {
+      color: #fff;
+      font-size: 1.8rem;
+      transition: transform 0.3s;
+    }
+    .social a:hover {
+      transform: scale(1.2);
+      color: red;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+      .intro {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    .project-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: red;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('contact')">Contact</a>
+    <a onclick="toggleProject()">Project</a>
+  </nav>
+
+  <section id="home" class="intro">
+    <img src="spycho.jpg" alt="Rifat's Photo">
+    <div class="intro-text">
+      <h2>Hi My Name Is</h2>
+      <h1>AM.RiFaT</h1>
+      <p>Future Software Engineer, Web Developer, App Developer, Cyber Security Expert</p>
+    </div>
+  </section>
+
+  <section id="about" class="section hidden">
+    <h2>About</h2>
+    <p>Assalamualaikum<br>
+    Hi I am ABM.RiFaT<br>
+    I am a student. I love learning new technology and sharing my knowledge with everyone.</p>
+  </section>
+
+  <section id="contact" class="section hidden">
+    <h2>Contact</h2>
+    <p>Email: Rrabnan77@gmail.com<br>
+    Phone: 01751843872</p>
+  </section>
+
+  <section id="projectSection" class="section hidden">
+    <h2>Projects</h2>
+    <button class="project-button" onclick="openLoverForm()">Lover Form</button>
+  </section>
+
+  <div class="social">
+    <a href="https://www.facebook.com/DarkSpYcHo71" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://github.com/DarkSpYcHo" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/dark_spycho71?igsh=MXJrNjM3OW40bGp5cw==" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <footer>
+    &copy; 2025 ABM.RiFaT. All Rights Reserved.
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.getElementById('home').classList.add('hidden');
+      document.getElementById('about').classList.add('hidden');
+      document.getElementById('contact').classList.add('hidden');
+      document.getElementById('projectSection').classList.add('hidden');
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function toggleProject() {
+      document.getElementById('home').classList.add('hidden');
+      document.getElementById('about').classList.add('hidden');
+      document.getElementById('contact').classList.add('hidden');
+      document.getElementById('projectSection').classList.remove('hidden');
+    }
+
+    function openLoverForm() {
+      window.open('lover.html', '_blank');
+    }
+  </script>
+</body>
+</html>

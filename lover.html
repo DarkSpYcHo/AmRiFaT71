@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Queen Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #f1f1f1;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #ff4081;
+      animation: slideDown 1s ease;
+    }
+
+    @keyframes slideDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    form {
+      background-color: #1e1e2f;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 64, 129, 0.2);
+      max-width: 500px;
+      margin: auto;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    input[type="text"], input[type="email"], input[type="number"],
+    input[type="date"], input[type="color"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #555;
+      background-color: #2d2d44;
+      color: #f1f1f1;
+    }
+
+    input[type="checkbox"] {
+      margin: 5px;
+      transform: scale(1.2);
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      background-color: #00ff66;
+      color: #000;
+      font-weight: bold;
+      width: 48%;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ff66, 0 0 30px #00ff66;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1aff66;
+      box-shadow: 0 0 25px #33ff99, 0 0 50px #33ff99;
+      transform: scale(1.05);
+    }
+
+    input[type="reset"] {
+      padding: 10px 20px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      background-color: #444;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      width: 48%;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    input[type="reset"]:hover {
+      background-color: #666;
+      transform: scale(1.05);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #444;
+      margin: 15px 0;
+    }
+
+    .message {
+      display: none;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 30px;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+      animation: glowText 2s infinite alternate;
+    }
+
+    @keyframes glowText {
+      from {text-shadow: 0 0 10px #00ffcc;}
+      to {text-shadow: 0 0 30px #00ffcc;}
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 4s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% { bottom: 0; opacity: 1; }
+      100% { bottom: 100%; opacity: 0; }
+    }
+
+    .developer-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #1e90ff;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .developer-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #4fc3f7, 0 0 40px #4fc3f7;
+    }
+
+    .dev-wrapper {
+      text-align: right;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>... If You Will Be My Queen...</h1>
+  <h2>**** Fill Up Form ****</h2>
+
+  <form onsubmit="return showMessage(event)">
+    <input type="text" placeholder="Your First Name:" required>
+    <input type="text" placeholder="Your Last Name:" required>
+    <hr>
+    <input type="email" placeholder="Enter Your Email Address:" required>
+    <hr>
+    <input type="number" placeholder="Phone:" required>
+    <hr>
+    Date of Birth: <input type="date" required>
+    <hr>
+    Your Favorite Color: <input type="color">
+    <hr>
+    Account:
+    <input type="checkbox"> Facebook
+    <input type="checkbox"> Imo
+    <input type="checkbox"> Instagram
+    <input type="checkbox"> Telegram
+    <input type="checkbox"> WhatsApp
+    <input type="checkbox"> X
+    <input type="checkbox"> Discord
+    <input type="checkbox"> TikTok
+    <hr>
+    <input type="password" placeholder="Create a Password:" required>
+    <hr>
+    <input type="password" placeholder="Confirm Your Password:" required>
+    <hr>
+    <input type="submit" value="Register">
+    <input type="reset" value="Reset">
+
+    <!-- Developer Button নিচে ডান পাশে -->
+    <div class="dev-wrapper">
+      <button class="developer-btn" onclick="developerInfo()">Developer</button>
+    </div>
+  </form>
+
+  <div class="message" id="successMessage">Thank You My Queen!</div>
+
+  <script>
+    function showMessage(event) {
+      event.preventDefault();
+      const passwords = document.querySelectorAll('input[type="password"]');
+      if (passwords[0].value !== passwords[1].value) {
+        alert("Passwords do not match!");
+        return false;
+      }
+
+      document.querySelector("form").style.display = "none";
+      document.getElementById("successMessage").style.display = "block";
+
+      for (let i = 0; i < 25; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }
+
+      return false;
+    }
+
+    function developerInfo() {
+      alert("Developed by Rifat — Future Software Engineer!");
+    }
+  </script>
+</body>
+</html>
